@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CSS Selectors</title>
+</head>
+<body>
+    <h1>CSS Selectors</h1>
+    <h2>Go back to <a href="index.html">directory</a></h2>
+    <h4>Universal Selector</h4>
+    <p>The universal selector will select elements of any type, hence the name “universal”, and the syntax for it is a simple asterisk. In the example below, every element would have the color: purple; style applied to it.</p>
+    <code>
+        <pre>
+        * {
+            color: purple;
+        }
+        </pre>
+    </code>
+    <p>This code, when added to our css, will set all 'text' to color purple.</p>
+    <hr>
+    <h4>Type Selector</h4>
+    <p>A type selector (or element selector) will select all elements of the given element type, and the syntax is just the name of the element:</p>
+    <code>
+        <pre>
+        <div>Hello, World!</div>
+        <div>Hello again!</div>
+        <p>Hi...</p>
+        <div>Okay, bye.</div>
+
+        div {
+            color: green;
+            }
+        </pre>
+    </code>
+    <p>This code, when added to our css, will set all 'text' to color green if it is inside a 'div'.</p>
+    <hr>
+    <h4>Class Selector</h4>
+    <p>Class selectors will select all elements with the given class, which is just an attribute you place on an HTML element. Here’s how you add a class to an HTML tag and select it in CSS:</p>
+    <code>
+        <pre>
+            <div class="alert-text">Please agree to our terms of service.</div>
+            .alert-text {
+                color: red;
+              }
+        </pre>
+    </code>
+    <p>class selectors is one way to add specific style/s to specific classes. You will just need to create a class, and create the styles you want. You can also use the same class to other elements you want the same style/s to apply</p>
+    <hr>
+    <h4>ID Selector</h4>
+    <p>ID selectors are similar to class selectors. They select an element with the given ID, which is another attribute you place on an HTML element. The major difference between classes and IDs is that an element can only have one ID. It cannot be repeated on a single page and should not contain any whitespace:</p>
+    <code>
+        <pre>
+            <div id="title">My Awesome 90's Page</div>
+            #title {
+                background-color: red;
+              }
+        </pre>
+    </code>
+    <p>For IDs, instead of a period, we use a hashtag immediately followed by the case-sensitive value of the ID attribute.</p>
+    <hr>
+    <h4>Grouping Selector</h4>
+    <p>Grouping selector allows you to group different selectors having the same styles to apply. For example:</p>
+    <p>If we have 2 different classes but both will have a height of 100px and border color red we can just do this:</p>
+    <code>
+        <pre>
+            <div class="box1 box-main"></div>
+            <div class="box2 box-main"></div>
+
+            .box1, box2 {
+                height: 100px;
+                border: 1px solid red;
+            }
+
+            .box1 {
+                width: 200px;
+            }
+
+            .box2 {
+                width: 100px
+            }
+        </pre>
+    </code>
+    <p>In this code, both box1 and box2 have the height and border styles, and we can also define/create class-specific styles after</p>
+    <hr>
+    <h4>Descendant Combinator Selector</h4>
+    <p>A descendant combinator will only cause elements that match the last selector to be selected if they also have an ancestor (parent, grandparent, etc) that matches the previous selector.</p>
+    <code>
+        <pre>
+            <div class="anscestor">
+                <div class="grand-parent">
+                    <div class="parent">
+                        <div class="child"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="child"></div>
+            .anscestor .child {
+                height: 100px;
+                width: 100px;
+                border: 1px solid red;
+            }
+        </pre>
+    </code>
+    <p>As you can see here, we can directly choose the child class. The reason for this is because, the .child is a direct descendant of the .ancestor class. While the outer .child class, is not. Thus, not having the CSS styles being applied</p>
+</body>
+</html>
