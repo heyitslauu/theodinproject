@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Javascript</title>
+</head>
+<body>
+    <h1>Toggle the console on Developer Tools to check the scripts being ran in this page.</h1>
+    <script>
+        console.log("Hello, World!")
+
+        let name = "heyitslau";
+        const userName = '@heyitslau';
+
+        //Javascript Variables
+        console.log(name)
+        console.log(userName)
+
+        //Javascript Numbers
+        console.log(23 + 97)
+        console.log(10 + 213 + 56 + 19 + 99 + 45)
+        console.log((4 + 6 + 9) / 77)
+
+        //Variables and Numbers
+        let a = 10;
+        console.log(a)
+        console.log( 9 * a )
+        let b = 7 * a
+        console.log(b)
+
+        const max = 57;
+        let actual = max - 13;
+        let percentage = actual / max;
+        console.log(percentage)
+
+        function add7(number) {
+            return number + 7;
+        }
+
+        console.log("result of add7 function is: ", add7(7))
+        console.log("result of add7 function is: ", add7(3))
+
+
+        function multiply(num1, num2) {
+            return num1 * num2;
+        }
+
+        console.log("result of multiply function is: ", multiply(2,3))
+        console.log("result of multiply function is: ", multiply(3,3))
+
+        function capitalize(str) {
+            let newText = '';
+            newText += str.charAt(0).toUpperCase(); 
+            newText += str.slice(1);
+            return newText;
+        }
+
+        console.log("result of capitalize function is: ", capitalize('tEst123'))
+        console.log("result of capitalize function is: ", capitalize('another test'))
+
+
+        function lastLetter(str) {
+            return str.slice(-1)
+        }
+
+        console.log("result of lastLetter function is: ", lastLetter('helloes'))
+    </script>
+</body>
+</html>
