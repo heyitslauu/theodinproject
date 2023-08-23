@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+    <h1>Check out console on Dev Tools</h1>
+
+    <script>
+        //moves available in the game
+        const moves = ['rock', 'paper', 'scissors'];
+
+        //get the computer choice
+        function getComputerChoice(){
+            const choice = Math.floor(Math.random() * 3);
+            return moves[choice]
+        }
+
+        //play a round
+        function playRound(computerChoice, playerChoice) {
+            //case-insensitivity option
+            const player = playerChoice.toLowerCase();
+            const computer = computerChoice.toLowerCase();
+
+            
+            
+            if(player === computer) {
+                return 'Its a Tie!'
+            }
+            else if(computer == 'rock') {
+                if (player == 'paper') {
+                    return 'Player win!'
+                }
+                else {
+                    return 'Computer win!'
+                }
+            }
+            else if(computer == 'paper') {
+                if (player == 'scissors') {
+                    return 'Player win!'
+                }
+                else {
+                    return 'Computer win!'
+                }
+            }
+            else if(computer == 'scissors') {
+                if(player == 'rock') {
+                    return 'Player win!'
+                }
+                else {
+                    return 'Computer win!'
+                }
+            }
+        }
+
+        function game() {
+            keepGoing = true;
+
+             //get the player choice
+            const PLAYER_CHOICE = prompt("Choose your move [rock, paper, scissors]")
+
+            //if move does not exist, break the game
+            if(!moves.includes(PLAYER_CHOICE)) {
+                keepGoing = false;
+                alert("Invalid move!")
+            }
+            round = 0;
+     
+            while(keepGoing && round != 5   ) {
+                const computerMove = getComputerChoice();
+                
+                console.log(playRound(computerMove, PLAYER_CHOICE))
+                round += 1;
+            }
+        }
+        
+        game();
+        
+    </script>
+</body>
+</html>
